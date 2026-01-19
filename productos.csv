@@ -1,11 +1,11 @@
 id,nombre,categoria,precio_mxn,imagen,descripcion,marca,origen,stock,activo
-1,Caf√© Geisha de Panam√°,Caf√© Especial,850,https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400,Caf√© de alt√≠sima calidad considerado el mejor del mundo,Hacienda Esmeralda,Panam√°,10,true
-2,Aceite de Oliva Extra Virgen,Aceites,450,https://images.unsplash.com/photo-1533050487297-09b450131914?w=400,Primera prensada en fr√≠o intenso aroma afrutado,Carbonell,Espa√±a,15,true
-3,Chocolate Belga 85% Cacao,Chocolates,320,https://images.unsplash.com/photo-1575377427642-087cf684f29d?w=400,Chocolate artesanal con alto porcentaje de cacao,Callebaut,B√©lgica,20,true
-4,Queso Parmesano Reggiano,Quesos Internacionales,680,https://images.unsplash.com/photo-1541529086526-db283c563270?w=400,Queso italiano a√±ejado 24 meses DOP certificado,Reggiano,Italia,8,true
-5,Vino Tinto Rioja Reserva,Vinos y Espumosos,850,https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400,Rioja reserva 2018 a√±ejado en barrica de roble,DOCa Rioja,Espa√±a,12,true
-6,Miel Org√°nica de Manuka,Productos Org√°nicos,950,https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=400,Miel de Nueva Zelanda con propiedades beneficiosas,UMF 10+,Nueva Zelanda,5,true
-7,Azafr√°n Espa√±ol,Especias y Condimentos,1250,https://images.unsplash.com/photo-1596048502285-0d21e8f0e4c2?w=400,Azafr√°n puro de La Mancha el mejor del mundo,DOP La Mancha,Espa√±a,3,true
-8,Jam√≥n Ib√©rico de Bellota,Carnes y Embutidos,1850,https://images.unsplash.com/photo-1602471619520-38a0a8ce23ee?w=400,Jam√≥n 100% ib√©rico de bellota curado 36 meses,D.O. Jabugo,Espa√±a,6,true
-9,Pasta Sin Gluten,Productos Sin Gluten,180,https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400,Pasta de arroz y ma√≠z ideal para cel√≠acos,Certificado Sin Gluten,Italia,25,true
-10,Agua Mineral Fiji,Bebidas No Alcoh√≥licas,85,https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400,Agua natural de acu√≠fero subterr√°neo en Fiji,Fiji Water,Islas Fiji,30,true
+1,CafÈ Geisha de Panam·,CafÈ Especial,850,https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400,CafÈ de altÌsima calidad considerado el mejor del mundo,Hacienda Esmeralda,Panam·,10,true
+2,Aceite de Oliva Extra Virgen,Aceites,450,https://images.unsplash.com/photo-1533050487297-09b450131914?w=400,Primera prensada en frÌo intenso aroma afrutado,Carbonell,EspaÒa,15,true
+3,Chocolate Belga 85% Cacao,Chocolates,320,https://images.unsplash.com/photo-1575377427642-087cf684f29d?w=400,Chocolate artesanal con alto porcentaje de cacao,Callebaut,BÈlgica,20,true
+4,Queso Parmesano Reggiano,Quesos Internacionales,680,https://images.unsplash.com/photo-1541529086526-db283c563270?w=400,Queso italiano aÒejado 24 meses DOP certificado,Reggiano,Italia,8,true
+5,Vino Tinto Rioja Reserva,Vinos y Espumosos,850,https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400,Rioja reserva 2018 aÒejado en barrica de roble,DOCa Rioja,EspaÒa,12,true
+6,Miel Org·nica de Manuka,Productos Org·nicos,950,https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=400,Miel de Nueva Zelanda con propiedades beneficiosas,UMF 10+,Nueva Zelanda,5,true
+7,Azafr·n EspaÒol,Especias y Condimentos,1250,https://images.unsplash.com/photo-1596048502285-0d21e8f0e4c2?w=400,Azafr·n puro de La Mancha el mejor del mundo,DOP La Mancha,EspaÒa,3,true
+8,JamÛn IbÈrico de Bellota,Carnes y Embutidos,1850,https://images.unsplash.com/photo-1602471619520-38a0a8ce23ee?w=400,JamÛn 100% ibÈrico de bellota curado 36 meses,D.O. Jabugo,EspaÒa,6,true
+9,Pasta Sin Gluten,Productos Sin Gluten,180,https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400,Pasta de arroz y maÌz ideal para celÌacos,Certificado Sin Gluten,Italia,25,true
+10,Agua Mineral Fiji,Bebidas No AlcohÛlicas,85,https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400,Agua natural de acuÌfero subterr·neo en Fiji,Fiji Water,Islas Fiji,30,true
