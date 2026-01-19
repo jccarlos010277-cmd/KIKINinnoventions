@@ -11,12 +11,8 @@
     <meta name="geo.region" content="MX-NLE">
     <meta name="geo.placename" content="Monterrey">
 
-    <!-- Manifest y favicon -->
-    <link rel="manifest" href="/manifest.json?v=5">
-    <meta name="theme-color" content="#2C5530">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <!-- Favicon básico temporal -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -1118,7 +1114,7 @@
 <!-- ==================== SCRIPTS ==================== -->
 
 <!-- Catálogo dinámico para México -->
-<script src="catalogo-dinamico.js"></script>
+<script src="catalogo-dinamico.js" onerror="cargarCatalogoEmergencia()"></script>
 
 <!-- Script principal adaptado para México -->
 <script>
@@ -2233,6 +2229,127 @@
     window.removeFromCart = removeFromCart;
     window.toggleAccordion = toggleAccordion;
     window.switchDepartment = switchDepartment;
+</script>
+
+<!-- ==================== CÓDIGO DE EMERGENCIA ==================== -->
+<script>
+// Función para cargar catálogo de emergencia
+function cargarCatalogoEmergencia() {
+    console.log('⚠️ catalogo-dinamico.js no se cargó, usando emergencia...');
+    
+    const productosEmergencia = [
+        {
+            id: 1,
+            name: "Café Geisha de Panamá",
+            price: 850,
+            image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400",
+            description: "Café de altísima calidad, considerado el mejor del mundo",
+            specificDetails: "Hacienda Esmeralda • Panamá",
+            category: "Café Especial",
+            department: "mercado",
+            stock: 10,
+            status: "available",
+            brand: "Hacienda Esmeralda",
+            origin: "Panamá"
+        },
+        {
+            id: 2,
+            name: "Aceite de Oliva Extra Virgen",
+            price: 450,
+            image: "https://images.unsplash.com/photo-1533050487297-09b450131914?w=400",
+            description: "Primera prensada en frío, intenso aroma afrutado",
+            specificDetails: "Carbonell • España",
+            category: "Aceites",
+            department: "mercado",
+            stock: 15,
+            status: "available",
+            brand: "Carbonell",
+            origin: "España"
+        },
+        {
+            id: 3,
+            name: "Chocolate Belga 85% Cacao",
+            price: 320,
+            image: "https://images.unsplash.com/photo-1575377427642-087cf684f29d?w=400",
+            description: "Chocolate artesanal con alto porcentaje de cacao",
+            specificDetails: "Callebaut • Bélgica",
+            category: "Chocolates",
+            department: "mercado",
+            stock: 20,
+            status: "available",
+            brand: "Callebaut",
+            origin: "Bélgica"
+        },
+        {
+            id: 4,
+            name: "Queso Parmesano Reggiano",
+            price: 680,
+            image: "https://images.unsplash.com/photo-1541529086526-db283c563270?w=400",
+            description: "Queso italiano añejado 24 meses, DOP certificado",
+            specificDetails: "Reggiano • Italia",
+            category: "Quesos Internacionales",
+            department: "mercado",
+            stock: 8,
+            status: "available",
+            brand: "Reggiano",
+            origin: "Italia"
+        },
+        {
+            id: 5,
+            name: "Vino Tinto Rioja Reserva",
+            price: 850,
+            image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400",
+            description: "Rioja reserva 2018, añejado en barrica de roble",
+            specificDetails: "DOCa Rioja • España",
+            category: "Vinos y Espumosos",
+            department: "mercado",
+            stock: 12,
+            status: "available",
+            brand: "DOCa Rioja",
+            origin: "España"
+        }
+    ];
+    
+    // Si CatalogoDinamico existe, inyecta los productos
+    if (window.CatalogoDinamico) {
+        CatalogoDinamico.productos = productosEmergencia;
+        CatalogoDinamico.cargado = true;
+        CatalogoDinamico.fuente = 'emergencia';
+        
+        // Disparar evento para que la tienda se actualice
+        setTimeout(() => {
+            window.dispatchEvent(new CustomEvent('catalogoCargado', {
+                detail: {
+                    productos: productosEmergencia,
+                    categorias: ['Café Especial', 'Aceites', 'Chocolates', 'Quesos Internacionales', 'Vinos y Espumosos'],
+                    fuente: 'emergencia',
+                    timestamp: Date.now(),
+                    totalProductos: productosEmergencia.length
+                }
+            }));
+            console.log('✅ Catálogo de emergencia cargado con 5 productos');
+        }, 500);
+    } else {
+        // Crear objeto global mínimo
+        window.CatalogoDinamico = {
+            productos: productosEmergencia,
+            categorias: ['Café Especial', 'Aceites', 'Chocolates', 'Quesos Internacionales', 'Vinos y Espumosos'],
+            cargado: true,
+            fuente: 'emergencia',
+            obtenerTodos: function() { return this.productos; },
+            obtenerPorId: function(id) { return this.productos.find(p => p.id === id); }
+        };
+        
+        console.log('✅ CatalogoDinamico creado de emergencia con 5 productos');
+    }
+}
+
+// Intentar cargar automáticamente después de 3 segundos
+setTimeout(function() {
+    if (!window.CatalogoDinamico || !CatalogoDinamico.cargado) {
+        cargarCatalogoEmergencia();
+    }
+}, 3000);
 </script>
 
 </body>
