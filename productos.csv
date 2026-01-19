@@ -1,0 +1,11 @@
+id,nombre,categoria,precio_mxn,imagen,descripcion,marca,origen,stock,activo
+1,Café Geisha de Panamá,Café Especial,850,https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400,Café de altísima calidad considerado el mejor del mundo,Hacienda Esmeralda,Panamá,10,true
+2,Aceite de Oliva Extra Virgen,Aceites,450,https://images.unsplash.com/photo-1533050487297-09b450131914?w=400,Primera prensada en frío intenso aroma afrutado,Carbonell,España,15,true
+3,Chocolate Belga 85% Cacao,Chocolates,320,https://images.unsplash.com/photo-1575377427642-087cf684f29d?w=400,Chocolate artesanal con alto porcentaje de cacao,Callebaut,Bélgica,20,true
+4,Queso Parmesano Reggiano,Quesos Internacionales,680,https://images.unsplash.com/photo-1541529086526-db283c563270?w=400,Queso italiano añejado 24 meses DOP certificado,Reggiano,Italia,8,true
+5,Vino Tinto Rioja Reserva,Vinos y Espumosos,850,https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400,Rioja reserva 2018 añejado en barrica de roble,DOCa Rioja,España,12,true
+6,Miel Orgánica de Manuka,Productos Orgánicos,950,https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=400,Miel de Nueva Zelanda con propiedades beneficiosas,UMF 10+,Nueva Zelanda,5,true
+7,Azafrán Español,Especias y Condimentos,1250,https://images.unsplash.com/photo-1596048502285-0d21e8f0e4c2?w=400,Azafrán puro de La Mancha el mejor del mundo,DOP La Mancha,España,3,true
+8,Jamón Ibérico de Bellota,Carnes y Embutidos,1850,https://images.unsplash.com/photo-1602471619520-38a0a8ce23ee?w=400,Jamón 100% ibérico de bellota curado 36 meses,D.O. Jabugo,España,6,true
+9,Pasta Sin Gluten,Productos Sin Gluten,180,https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400,Pasta de arroz y maíz ideal para celíacos,Certificado Sin Gluten,Italia,25,true
+10,Agua Mineral Fiji,Bebidas No Alcohólicas,85,https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400,Agua natural de acuífero subterráneo en Fiji,Fiji Water,Islas Fiji,30,true

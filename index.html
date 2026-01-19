@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>KIKIN Innoventions | Productos Internacionales en Monterrey</title>
+    <meta name="description" content="Importamos lo excepcional. Productos gourmet, orgánicos y especializados entregados en 90 min en Monterrey. Calidad internacional a tu puerta.">
+    <meta name="keywords" content="productos importados monterrey, gourmet monterrey, entrega a domicilio premium, comida internacional, kikin innovations">
+    <meta name="author" content="KIKIN Innoventions">
+    <meta name="geo.region" content="MX-NLE">
+    <meta name="geo.placename" content="Monterrey">
+
+    <!-- Manifest y favicon -->
+    <link rel="manifest" href="/manifest.json?v=5">
+    <meta name="theme-color" content="#2C5530">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables CSS para KIKIN Innoventions */
+        :root {
+            --primary-color: #2C5530; /* Verde bosque */
+            --accent-color: #F9A826; /* Naranja energía */
+            --secondary-color: #E8F5E8; /* Verde claro */
+            --background-white: #ffffff;
+            --light-background: #f9fafb;
+            --text-dark: #1a202c;
+            --text-medium: #4a5568;
+            --text-light: #718096;
+        }
+        
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--light-background);
+            color: var(--text-dark);
+        }
+        
+        /* Tipografía responsiva */
+        .text-fixed-sm { font-size: 0.75rem; } 
+        @media (min-width: 768px) { .text-fixed-sm { font-size: 0.875rem; } }
+        
+        .text-fixed-base { font-size: 0.875rem; } 
+        @media (min-width: 768px) { .text-fixed-base { font-size: 1rem; } }
+        
+        .text-fixed-lg { font-size: 1rem; } 
+        @media (min-width: 768px) { .text-fixed-lg { font-size: 1.125rem; } }
+        
+        .text-fixed-xl { font-size: 1.125rem; } 
+        @media (min-width: 768px) { .text-fixed-xl { font-size: 1.25rem; } }
+        
+        .text-fixed-2xl { font-size: 1.25rem; } 
+        @media (min-width: 768px) { .text-fixed-2xl { font-size: 1.5rem; } }
+        
+        .text-fixed-3xl { font-size: 1.5rem; } 
+        @media (min-width: 768px) { .text-fixed-3xl { font-size: 1.875rem; } }
+        
+        /* Fuente para títulos premium */
+        .font-premium { font-family: 'Playfair Display', serif; }
+        
+        /* Estilos de Modales */
+        .modal-overlay { 
+            opacity: 0; 
+            visibility: hidden; 
+            transition: opacity 0.3s ease, visibility 0.3s ease; 
+        }
+        .modal-overlay.show { 
+            opacity: 1; 
+            visibility: visible; 
+        }
+        .modal-content { 
+            transform: translateY(-20px); 
+            opacity: 0; 
+            transition: transform 0.3s ease, opacity 0.3s ease; 
+        }
+        .modal-overlay.show .modal-content { 
+            transform: translateY(0); 
+            opacity: 1; 
+        }
+        
+        /* Menú Móvil */
+        #mobile-menu { 
+            transform: translateX(-100%); 
+            transition: transform 0.3s ease-in-out; 
+        }
+        #mobile-menu.open { 
+            transform: translateX(0); 
+        }
+        #mobile-backdrop { 
+            opacity: 0; 
+            visibility: hidden; 
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; 
+        }
+        #mobile-backdrop.open { 
+            opacity: 1; 
+            visibility: visible; 
+        }
+        
+        /* Botones de Categoría */
+        .category-btn { 
+            background-color: #edf2f7; 
+            color: var(--text-medium); 
+            padding: 8px 16px; 
+            border-radius: 9999px; 
+            font-weight: 600; 
+            transition: all 0.2s; 
+            border: 1px solid transparent; 
+            font-size: 0.875rem;
+        }
+        .category-btn:hover { 
+            background-color: #e2e8f0; 
+        }
+        .category-btn.active { 
+            background-color: var(--primary-color); 
+            color: white; 
+            border-color: var(--primary-color); 
+        }
+        
+        /* Botones de Pago */
+        .cash-btn { 
+            border: 1px solid #d1d5db; 
+            padding: 8px 12px; 
+            border-radius: 8px; 
+            font-size: 0.875rem; 
+            transition: all 0.2s; 
+        }
+        .cash-btn.active { 
+            background-color: var(--primary-color); 
+            color: white; 
+            border-color: var(--primary-color); 
+        }
+        
+        /* Animaciones */
+        .fade-in-up, .fade-in-left, .fade-in-right { 
+            opacity: 0; 
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+        }
+        .fade-in-up { transform: translateY(30px); }
+        .fade-in-left { transform: translateX(-30px); }
+        .fade-in-right { transform: translateX(30px); }
+        .is-visible { opacity: 1; transform: none; }
+        
+        /* Toast */
+        #cartToast { 
+            position: fixed; 
+            bottom: 24px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background-color: var(--text-dark); 
+            color: var(--background-white); 
+            padding: 12px 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+            opacity: 0; 
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+            pointer-events: none; 
+            z-index: 9999; 
+            font-size: 0.875rem; 
+            min-width: 200px; 
+            text-align: center; 
+        }
+        #cartToast.show { 
+            opacity: 1; 
+            transform: translateX(-50%) translateY(0); 
+        }
+        
+        /* Productos no disponibles */
+        .unavailable-product-card { 
+            background-color: #f8f8f8; 
+            cursor: not-allowed !important; 
+            filter: grayscale(80%); 
+        }
+        .unavailable-product-card .add-to-cart-btn { 
+            background-color: #a0aec0 !important; 
+            color: white !important; 
+            cursor: not-allowed !important; 
+        }
+        
+        /* Shake animation para carrito */
+        .shake { animation: shake-animation 0.6s ease-in-out; }
+        @keyframes shake-animation { 
+            0% { transform: translateX(0); } 
+            15% { transform: translateX(-8px) rotate(-5deg); } 
+            30% { transform: translateX(8px) rotate(5deg); } 
+            45% { transform: translateX(-8px) rotate(-5deg); } 
+            60% { transform: translateX(8px) rotate(5deg); } 
+            75% { transform: translateX(-5px) rotate(-2deg); } 
+            90% { transform: translateX(5px) rotate(2deg); } 
+            100% { transform: translateX(0); } 
+        }
+        
+        /* Estilos para badges de origen */
+        .origin-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 12px;
+            z-index: 10;
+        }
+        
+        /* Mejora visual para precios */
+        .price-tag {
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+        
+        /* Hero image con efecto premium */
+        .hero-premium {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(44, 85, 48, 0.15);
+            border: 8px solid white;
+        }
+        
+        /* Badge premium */
+        .premium-badge {
+            background: linear-gradient(135deg, var(--primary-color), #1e3a28);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<!-- HEADER PREMIUM -->
+<header id="mainHeader" class="fixed top-0 left-0 right-0 z-50 bg-[#2C5530] shadow-lg transition-all duration-300">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3">
+        <div class="flex items-center gap-4">
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <a href="#" class="flex items-center gap-3 flex-shrink-0">
+                <!-- Logo KIKIN - usar placeholder o subir tu logo -->
+                <div class="h-10 w-10 md:h-12 md:w-12 rounded-full shadow-md bg-white flex items-center justify-center border-2 border-[#F9A826]">
+                    <span class="text-[#2C5530] font-bold text-lg">K</span>
+                </div>
+                <span class="text-white text-xl font-bold hidden sm:block font-premium">KIKIN Innoventions</span>
+            </a>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-4 md:gap-8 text-white font-semibold text-sm">
+            <a href="#mercado" class="hover:text-[#F9A826] transition-colors duration-300">Productos</a>
+            <a href="#zonas-entrega" class="hover:text-[#F9A826] transition-colors duration-300">Zonas</a>
+            <a href="#como-comprar" class="hover:text-[#F9A826] transition-colors duration-300">Cómo Comprar</a>
+            <a href="#contacto" class="hover:text-[#F9A826] transition-colors duration-300">Contacto</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO BANNER PREMIUM -->
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-[#E8F5E8] to-white overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+            <!-- Texto -->
+            <div class="w-full lg:w-1/2 text-center lg:text-left z-10 fade-in-up">
+                <div class="inline-flex items-center gap-2 mb-6">
+                    <span class="premium-badge">⭐ PRODUCTOS PREMIUM</span>
+                    <span class="premium-badge" style="background: linear-gradient(135deg, #F9A826, #e88b00);">🚀 ENTREGA 90 MIN</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a202c] leading-tight mb-6">
+                    <span class="font-premium">Importamos</span> lo excepcional
+                    <br>
+                    <span class="text-[#F9A826] font-premium block mt-2">a tu puerta en Monterrey</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Descubre productos gourmet, orgánicos y especializados de todo el mundo. 
+                    Calidad internacional entregada en tu hogar en 90 minutos o menos.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#mercado" class="px-8 py-4 bg-[#2C5530] text-white font-bold rounded-full shadow-lg hover:bg-[#1e3a28] transition-all transform hover:scale-105 flex items-center justify-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        Explorar Catálogo
+                    </a>
+                    <a href="#zonas-entrega" class="px-8 py-4 bg-white text-[#2C5530] font-bold rounded-full border-2 border-[#E8F5E8] hover:border-[#2C5530] transition-all flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        Ver Zonas de Entrega
+                    </a>
+                </div>
+                
+                <!-- Features rápidos -->
+                <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-[#E8F5E8] flex items-center justify-center">
+                            <span class="text-[#2C5530] text-xs">✓</span>
+                        </div>
+                        <span>Entrega 90 min</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-[#E8F5E8] flex items-center justify-center">
+                            <span class="text-[#2C5530] text-xs">✓</span>
+                        </div>
+                        <span>Productos Importados</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-[#E8F5E8] flex items-center justify-center">
+                            <span class="text-[#2C5530] text-xs">✓</span>
+                        </div>
+                        <span>Pago Seguro</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen -->
+            <div class="w-full lg:w-1/2 relative fade-in-right">
+                <div class="hero-premium relative z-10">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Productos gourmet internacionales KIKIN Innoventions" 
+                         class="w-full h-[400px] md:h-[500px] object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                        <p class="text-xl font-bold">De Italia, Francia, Japón y más...</p>
+                        <p class="text-sm opacity-90">Directo a tu mesa en Monterrey</p>
+                    </div>
+                </div>
+                
+                <!-- Badge flotante -->
+                <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                    <div class="bg-[#F9A826] p-2 rounded-full text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 font-semibold">Entrega express</p>
+                        <p class="text-sm font-bold text-[#1a202c]">90 min garantizados*</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MENÚ MÓVIL -->
+<div id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-[#2C5530] z-50 shadow-xl md:hidden">
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-8">
+            <a href="#" class="flex items-center gap-2">
+                <div class="h-12 w-12 rounded-full bg-white flex items-center justify-center">
+                    <span class="text-[#2C5530] font-bold text-xl">K</span>
+                </div>
+                <span class="text-white text-fixed-lg font-bold font-premium">KIKIN</span>
+            </a>
+            <button id="close-mobile-menu" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4 text-fixed-lg font-semibold text-white">
+            <a href="#mercado" class="hover:text-[#F9A826] transition-colors mobile-nav-link py-2 border-b border-white/10">Productos</a>
+            <a href="#zonas-entrega" class="hover:text-[#F9A826] transition-colors mobile-nav-link py-2 border-b border-white/10">Zonas de Entrega</a>
+            <a href="#como-comprar" class="hover:text-[#F9A826] transition-colors mobile-nav-link py-2 border-b border-white/10">Cómo Comprar</a>
+            <a href="#contacto" class="hover:text-[#F9A826] transition-colors mobile-nav-link py-2">Contacto</a>
+        </nav>
+    </div>
+</div>
+<div id="mobile-backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"></div>
+
+<main>
+    <!-- VENTAJAS KIKIN -->
+    <section class="py-10 md:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 fade-in-up">
+                <h2 class="text-fixed-3xl md:text-fixed-4xl font-bold text-[#1a202c] mb-4">Por qué elegir KIKIN Innoventions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Calidad internacional, servicio excepcional y la comodidad de recibir en casa.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-[#E8F5E8] p-6 rounded-2xl text-center fade-in-up hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white flex items-center justify-center">
+                        <span class="text-2xl">🌍</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#2C5530] mb-3">Productos Curated</h3>
+                    <p class="text-gray-600">Seleccionamos personalmente cada producto internacional. Calidad verificada, origen garantizado.</p>
+                </div>
+                
+                <div class="bg-[#FFF8E1] p-6 rounded-2xl text-center fade-in-up hover:shadow-lg transition-shadow" style="animation-delay: 100ms;">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white flex items-center justify-center">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#F9A826] mb-3">Entrega Express</h3>
+                    <p class="text-gray-600">90 minutos o menos en zonas principales. Tu tiempo vale, por eso somos rápidos y eficientes.</p>
+                </div>
+                
+                <div class="bg-[#E8F5E8] p-6 rounded-2xl text-center fade-in-up hover:shadow-lg transition-shadow" style="animation-delay: 200ms;">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white flex items-center justify-center">
+                        <span class="text-2xl">🛡️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#2C5530] mb-3">Experiencia Premium</h3>
+                    <p class="text-gray-600">Embalaje especial, atención personalizada y garantía de satisfacción en cada pedido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ZONAS DE ENTREGA -->
+    <section id="zonas-entrega" class="py-10 md:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 fade-in-up">
+                <h2 class="text-fixed-3xl md:text-fixed-4xl font-bold text-[#1a202c] mb-4">Entregamos en Monterrey</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Consulta las zonas de cobertura y tiempos estimados de entrega.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto fade-in-up">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="p-6 border-b">
+                        <h3 class="text-xl font-bold text-[#2C5530] mb-4">🏍️ Entrega Express en Monterrey</h3>
+                        <p class="text-gray-600 mb-4">*Tiempo estimado desde la confirmación del pedido. Envío gratis en compras mayores a $599 MXN.</p>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <!-- Zona 1 -->
+                            <div class="border border-gray-200 rounded-xl p-4 hover:border-[#2C5530] transition-colors">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-bold text-gray-800">San Pedro Garza García</h4>
+                                    <span class="text-xs bg-[#E8F5E8] text-[#2C5530] px-2 py-1 rounded-full">POPULAR</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-1">Entrega: <span class="font-bold text-[#2C5530]">60-90 min</span></p>
+                                <p class="text-sm text-gray-600">Costo: <span class="font-bold">$49 MXN</span></p>
+                            </div>
+                            
+                            <!-- Zona 2 -->
+                            <div class="border border-gray-200 rounded-xl p-4 hover:border-[#2C5530] transition-colors">
+                                <h4 class="font-bold text-gray-800 mb-2">Valle Oriente</h4>
+                                <p class="text-sm text-gray-600 mb-1">Entrega: <span class="font-bold text-[#2C5530]">60-90 min</span></p>
+                                <p class="text-sm text-gray-600">Costo: <span class="font-bold">$49 MXN</span></p>
+                            </div>
+                            
+                            <!-- Zona 3 -->
+                            <div class="border border-gray-200 rounded-xl p-4 hover:border-[#2C5530] transition-colors">
+                                <h4 class="font-bold text-gray-800 mb-2">Centro Monterrey</h4>
+                                <p class="text-sm text-gray-600 mb-1">Entrega: <span class="font-bold text-[#2C5530]">90-120 min</span></p>
+                                <p class="text-sm text-gray-600">Costo: <span class="font-bold">$59 MXN</span></p>
+                            </div>
+                            
+                            <!-- Zona 4 -->
+                            <div class="border border-gray-200 rounded-xl p-4 hover:border-[#2C5530] transition-colors">
+                                <h4 class="font-bold text-gray-800 mb-2">Cumbres</h4>
+                                <p class="text-sm text-gray-600 mb-1">Entrega: <span class="font-bold text-[#2C5530]">90-120 min</span></p>
+                                <p class="text-sm text-gray-600">Costo: <span class="font-bold">$69 MXN</span></p>
+                            </div>
+                            
+                            <!-- Zona 5 -->
+                            <div class="border border-gray-200 rounded-xl p-4 hover:border-[#2C5530] transition-colors">
+                                <h4 class="font-bold text-gray-800 mb-2">Apodaca</h4>
+                                <p class="text-sm text-gray-600 mb-1">Entrega: <span class="font-bold text-[#2C5530]">120-150 min</span></p>
+                                <p class="text-sm text-gray-600">Costo: <span class="font-bold">$89 MXN</span></p>
+                            </div>
+                            
+                            <!-- Zona 6 -->
+                            <div class="border border-gray-200 rounded-xl p-4 hover:border-[#2C5530] transition-colors bg-[#FFF8E1]">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-bold text-gray-800">Otras zonas</h4>
+                                    <span class="text-xs bg-[#F9A826]/20 text-[#F9A826] px-2 py-1 rounded-full">CONSULTAR</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-1">Entrega: <span class="font-bold text-[#2C5530]">Variable</span></p>
+                                <p class="text-sm text-gray-600">Costo: <span class="font-bold">Cotizar</span></p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                            <p class="text-sm text-gray-600">
+                                <span class="font-bold text-[#2C5530]">⚠️ Importante:</span> 
+                                Mínimo de compra $299 MXN. Envío gratis en pedidos superiores a $599 MXN. 
+                                Horario de entrega: Lunes a Domingo de 9:00 a 21:00 hrs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN MERCADO -->
+    <section id="mercado" class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 fade-in-up">
+                <h2 class="text-fixed-3xl md:text-fixed-4xl font-bold text-[#1a202c] mb-4">Nuestro Catálogo Premium</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Productos seleccionados de todo el mundo. Calidad garantizada, origen verificado.</p>
+            </div>
+
+            <!-- Tabs de Departamentos -->
+            <div id="tabsContainer" class="sticky top-[70px] z-30 bg-white py-4 shadow-sm rounded-xl mb-8">
+                <div class="container mx-auto px-2">
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <button onclick="switchDepartment('mercado')" id="tab-mercado"
+                            class="department-tab active flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-3 rounded-xl font-bold text-sm transition-all shadow-sm border border-transparent bg-[#2C5530] text-white hover:scale-105 transform">
+                            🛒 Todo el Catálogo
+                        </button>
+                        
+                        <button onclick="switchDepartment('gourmet')" id="tab-gourmet"
+                            class="department-tab flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-3 rounded-xl font-bold text-sm transition-all shadow-sm border border-gray-200 bg-white text-gray-600 hover:bg-gray-100 hover:scale-105 transform">
+                            🍷 Gourmet
+                        </button>
+                        
+                        <button onclick="switchDepartment('organico')" id="tab-organico"
+                            class="department-tab flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-3 rounded-xl font-bold text-sm transition-all shadow-sm border border-gray-200 bg-white text-gray-600 hover:bg-gray-100 hover:scale-105 transform">
+                            🌱 Orgánico
+                        </button>
+                        
+                        <button onclick="switchDepartment('internacional')" id="tab-internacional"
+                            class="department-tab flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-3 rounded-xl font-bold text-sm transition-all shadow-sm border border-gray-200 bg-white text-gray-600 hover:bg-gray-100 hover:scale-105 transform">
+                            🌍 Internacional
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buscador Global -->
+            <div class="max-w-2xl mx-auto mb-8 fade-in-up">
+                <div class="relative">
+                    <input id="globalSearchInput" type="text" placeholder="🔍 Buscar producto, marca o país..."
+                           class="w-full px-6 py-4 border border-gray-300 rounded-full focus:ring-2 focus:ring-[#2C5530] focus:border-transparent transition text-fixed-base shadow-sm">
+                    <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">Enter para buscar</span>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2 text-center">Busca por nombre, categoría, marca o país de origen</p>
+            </div>
+
+            <!-- Banner de Información -->
+            <div class="bg-gradient-to-r from-[#E8F5E8] to-[#FFF8E1] p-4 rounded-xl mb-8 fade-in-up">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                            <span class="text-[#F9A826] text-lg">💰</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">Mínimo de compra: <span class="text-[#2C5530]">$299 MXN</span></p>
+                            <p class="text-sm text-gray-600">Envío gratis en pedidos superiores a $599 MXN</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs bg-white px-3 py-1 rounded-full">💳 Tarjeta</span>
+                        <span class="text-xs bg-white px-3 py-1 rounded-full">📱 Mercado Pago</span>
+                        <span class="text-xs bg-white px-3 py-1 rounded-full">💰 Efectivo</span>
+                        <span class="text-xs bg-white px-3 py-1 rounded-full">🏦 Transferencia</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor principal -->
+            <div class="min-h-screen">
+                <div id="mercadoCategoryFilters" class="flex flex-wrap justify-center gap-2 mb-8 fade-in-up"></div>
+                <div id="mercadoProductGrid"></div>
+                <p id="mercadoNoResultsMessage" class="hidden text-center text-fixed-lg text-gray-500 mt-8">No se encontraron productos en esta categoría.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO COMPRAR -->
+    <section id="como-comprar" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 fade-in-up">
+                <h2 class="text-fixed-3xl md:text-fixed-4xl font-bold text-[#1a202c]">Cómo Comprar en KIKIN</h2>
+                <p class="mt-2 text-fixed-base text-gray-600">Sigue estos simples pasos para recibir productos internacionales en casa.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Pasos -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#E8F5E8] flex items-center justify-center text-[#2C5530] font-bold text-xl">1</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Explora y Selecciona</h3>
+                        <p class="text-gray-600">Navega por nuestro catálogo premium y añade productos a tu carrito.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up" style="animation-delay: 100ms;">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#FFF8E1] flex items-center justify-center text-[#F9A826] font-bold text-xl">2</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Confirma tu Pedido</h3>
+                        <p class="text-gray-600">Ingresa tus datos y selecciona método de pago. Recibirás confirmación inmediata.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center fade-in-up" style="animation-delay: 200ms;">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#E8F5E8] flex items-center justify-center text-[#2C5530] font-bold text-xl">3</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Recibe en Casa</h3>
+                        <p class="text-gray-600">Tu pedido llegará en 90 minutos o menos, con empaque premium y atención personalizada.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-6 border-b">
+                        <h3 class="text-xl font-bold text-[#2C5530]">Preguntas Frecuentes</h3>
+                    </div>
+                    
+                    <div class="divide-y divide-gray-100">
+                        <!-- FAQ 1 -->
+                        <div class="p-6">
+                            <button class="w-full text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion('faq-1')">
+                                <span class="text-lg font-semibold text-gray-800">¿Cuál es el horario de entrega?</span>
+                                <svg id="icon-faq-1" class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="content-faq-1" class="hidden mt-3">
+                                <p class="text-gray-600">Entregamos de <strong>Lunes a Domingo de 9:00 a 21:00 hrs</strong>. Los pedidos confirmados antes de las 20:00 hrs se entregan el mismo día.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 2 -->
+                        <div class="p-6">
+                            <button class="w-full text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion('faq-2')">
+                                <span class="text-lg font-semibold text-gray-800">¿Cuáles métodos de pago aceptan?</span>
+                                <svg id="icon-faq-2" class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="content-faq-2" class="hidden mt-3">
+                                <p class="text-gray-600 mb-2">Aceptamos:</p>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                    <li>Tarjetas de crédito/débito (Visa, MasterCard, American Express)</li>
+                                    <li>Mercado Pago</li>
+                                    <li>Transferencia bancaria</li>
+                                    <li>Efectivo al recibir</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 3 -->
+                        <div class="p-6">
+                            <button class="w-full text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion('faq-3')">
+                                <span class="text-lg font-semibold text-gray-800">¿Los productos son realmente importados?</span>
+                                <svg id="icon-faq-3" class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="content-faq-3" class="hidden mt-3">
+                                <p class="text-gray-600"><strong>Sí, 100% importados.</strong> Trabajamos directamente con productores y distribuidores internacionales. Cada producto incluye su certificado de origen y trazabilidad completa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y NEWSLETTER -->
+    <section id="contacto" class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-fixed-3xl md:text-fixed-4xl font-bold text-[#1a202c]">Únete a la Comunidad KIKIN</h2>
+                <p class="mt-4 text-fixed-lg text-gray-600 max-w-3xl mx-auto">Sé el primero en conocer nuevos productos, promociones exclusivas y eventos especiales.</p>
+            </div>
+            
+            <div class="max-w-lg mx-auto bg-gradient-to-br from-[#E8F5E8] to-[#FFF8E1] p-8 rounded-2xl shadow-xl text-center fade-in-up" style="transition-delay: 150ms;">
+                <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-white flex items-center justify-center shadow-md">
+                    <span class="text-3xl">📦</span>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Newsletter Exclusivo</h3>
+                <p class="text-gray-600 mb-6">Recibe cada semana nuestro catálogo actualizado, recetas gourmet y descuentos especiales para suscriptores.</p>
+                
+                <form id="newsletterForm" class="space-y-4">
+                    <input type="email" placeholder="tu@email.com" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C5530] focus:border-transparent">
+                    <button type="submit"
+                            class="w-full bg-[#2C5530] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#1e3a28] transition-colors">
+                        Suscribirme al Newsletter
+                    </button>
+                </form>
+                
+                <p class="text-xs text-gray-500 mt-4">Sin spam, solo contenido de valor. Puedes darte de baja en cualquier momento.</p>
+                
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <p class="text-gray-600 mb-4">¿Prefieres contacto directo?</p>
+                    <a href="https://wa.me/5218112345678" target="_blank"
+                       class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full text-fixed-lg hover:bg-green-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                        WhatsApp: +52 81 1234 5678
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#1a202c] text-white py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Logo y descripción -->
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="h-12 w-12 rounded-full bg-white flex items-center justify-center">
+                        <span class="text-[#2C5530] font-bold text-xl">K</span>
+                    </div>
+                    <span class="text-xl font-bold font-premium">KIKIN Innoventions</span>
+                </div>
+                <p class="text-gray-400 mb-6 max-w-md">
+                    Importamos lo excepcional. Productos gourmet, orgánicos y especializados de todo el mundo, 
+                    entregados en tu puerta en Monterrey en 90 minutos o menos.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Enlaces rápidos -->
+            <div>
+                <h4 class="text-lg font-bold mb-4">KIKIN</h4>
+                <ul class="space-y-2">
+                    <li><a href="#mercado" class="text-gray-400 hover:text-white transition-colors">Productos</a></li>
+                    <li><a href="#zonas-entrega" class="text-gray-400 hover:text-white transition-colors">Zonas de Entrega</a></li>
+                    <li><a href="#como-comprar" class="text-gray-400 hover:text-white transition-colors">Cómo Comprar</a></li>
+                    <li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <!-- Información legal -->
+            <div>
+                <h4 class="text-lg font-bold mb-4">Legal</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Términos y Condiciones</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Política de Privacidad</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Aviso Legal</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Facturación</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 KIKIN Innoventions S.A. de C.V. Todos los derechos reservados.<br>
+                Monterrey, Nuevo León, México. RFC: KIN240101AAA
+            </p>
+            <p class="text-xs text-gray-500 mt-2">
+                Los precios incluyen IVA. *Tiempos de entrega pueden variar según condiciones de tráfico.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ==================== MODALES ==================== -->
+
+<!-- Modal Carrito -->
+<div id="cartModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div class="modal-content bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] flex flex-col">
+        <div class="p-6 border-b border-gray-200">
+            <div class="flex justify-between items-center">
+                <h3 class="text-fixed-xl font-bold text-gray-800">Tu Carrito KIKIN</h3>
+                <button id="closeCartModal" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div id="cartItems" class="p-6 overflow-y-auto flex-grow">
+            <p class="text-center text-gray-500 text-fixed-base">Tu carrito está vacío</p>
+        </div>
+        
+        <div class="p-6 border-t border-gray-200">
+            <div class="space-y-3 mb-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-fixed-base text-gray-600">Subtotal:</span>
+                    <span id="cartSubtotal" class="text-fixed-base font-semibold">$0</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-fixed-base text-gray-600">IVA (16%):</span>
+                    <span id="cartIVA" class="text-fixed-base font-semibold">$0</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-fixed-base text-gray-600">Envío:</span>
+                    <span id="cartShipping" class="text-fixed-base font-semibold">$0</span>
+                </div>
+                <hr class="my-2">
+                <div class="flex justify-between items-center">
+                    <span class="text-fixed-lg font-bold text-gray-800">Total:</span>
+                    <span id="cartTotal" class="text-fixed-xl font-bold text-[#2C5530]">$0</span>
+                </div>
+            </div>
+            
+            <button id="sendWhatsAppOrder" 
+                    class="w-full bg-[#2C5530] text-white font-bold py-3 px-6 rounded-lg text-fixed-base hover:bg-[#1e3a28] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.04 2C7.38 2 3.51 5.87 3.51 10.53C3.51 12.02 3.9 13.43 4.6 14.65L3.32 20.02L8.76 18.73C9.9 19.37 11.19 19.72 12.51 19.72H12.53C17.19 19.72 21.06 15.85 21.06 11.19C21.06 6.53 17.19 2.66 12.53 2.66H12.51Z"/>
+                </svg>
+                Enviar Pedido por WhatsApp
+            </button>
+            
+            <p class="text-xs text-gray-500 mt-3 text-center">
+                Mínimo de compra: $299 MXN<br>
+                Envío gratis en pedidos > $599 MXN
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Detalles Producto -->
+<div id="productDetailsModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[1000]">
+    <div class="modal-content bg-white rounded-xl shadow-2xl w-11/12 max-w-md max-h-[90vh] flex flex-col">
+        <div class="flex justify-between items-center p-6 border-b border-gray-200">
+            <h2 id="productDetailsTitle" class="text-fixed-2xl font-bold text-gray-800"></h2>
+            <button id="closeProductDetailsModalBtn" class="text-gray-500 hover:text-gray-800 text-fixed-3xl">&times;</button>
+        </div>
+        
+        <div class="p-6 overflow-y-auto">
+            <!-- Badge de origen -->
+            <div id="productOriginBadge" class="origin-badge"></div>
+            
+            <img id="productDetailsImage" src="" alt="Imagen del Producto" class="w-full h-64 object-cover rounded-lg mb-4">
+            
+            <div id="productBrandOrigin" class="flex items-center gap-2 mb-3">
+                <span class="text-sm font-semibold text-[#2C5530]" id="productBrand"></span>
+                <span class="text-gray-400">•</span>
+                <span class="text-sm text-gray-600" id="productOrigin"></span>
+            </div>
+            
+            <p id="productDetailsDescription" class="text-fixed-base text-gray-600 mb-4"></p>
+            
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                <p class="text-sm font-semibold text-gray-700 mb-2">Información adicional:</p>
+                <p id="productSpecificDetails" class="text-sm text-gray-600"></p>
+            </div>
+            
+            <p id="productDetailsPrice" class="text-fixed-3xl font-bold text-[#2C5530] mb-6 text-center price-tag"></p>
+            
+            <div class="flex items-center justify-center space-x-4 mb-4">
+                <button id="decreaseQuantityBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold w-10 h-10 rounded-full text-fixed-xl transition-colors">-</button>
+                <span id="productQuantityDisplay" class="text-fixed-2xl font-bold w-12 text-center">1</span>
+                <button id="increaseQuantityBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold w-10 h-10 rounded-full text-fixed-xl transition-colors">+</button>
+            </div>
+            
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-fixed-lg font-semibold text-gray-700">Total:</span>
+                    <span id="modalTotalPrice" class="text-fixed-2xl font-bold text-[#F9A826]">$0</span>
+                </div>
+            </div>
+            
+            <button id="addProductToCartModalBtn" 
+                    class="w-full bg-[#2C5530] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#1e3a28] transition-all duration-300 text-fixed-lg flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                Añadir al Carrito
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Checkout -->
+<div id="checkoutModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4">
+    <div class="modal-content bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden">
+        <div class="p-6 border-b border-gray-200">
+            <div class="flex justify-between items-center">
+                <h3 class="text-fixed-2xl font-bold text-gray-800">Finalizar Pedido</h3>
+                <button id="closeCheckoutModal" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="flex-1 overflow-y-auto">
+            <!-- Resumen del pedido -->
+            <div class="p-6 border-b border-gray-200">
+                <h4 class="text-fixed-lg font-bold text-gray-800 mb-4">📦 Resumen de tu pedido</h4>
+                <div id="checkoutOrderSummary" class="space-y-3 mb-4"></div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg space-y-2">
+                    <div class="flex justify-between text-fixed-base">
+                        <span class="text-gray-600">Subtotal:</span>
+                        <span id="checkoutSubtotal" class="font-semibold">$0</span>
+                    </div>
+                    <div class="flex justify-between text-fixed-base">
+                        <span class="text-gray-600">IVA (16%):</span>
+                        <span id="checkoutIVA" class="font-semibold">$0</span>
+                    </div>
+                    <div class="flex justify-between text-fixed-base">
+                        <span class="text-gray-600">Envío:</span>
+                        <span id="checkoutShipping" class="font-semibold">$49 MXN</span>
+                    </div>
+                    <hr class="my-2">
+                    <div class="flex justify-between text-fixed-lg font-bold text-[#2C5530]">
+                        <span>Total:</span>
+                        <span id="checkoutTotal">$0</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">
+                        *Envío gratis aplica en pedidos superiores a $599 MXN
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Datos del cliente -->
+            <div class="p-6 border-b border-gray-200">
+                <h4 class="text-fixed-lg font-bold text-gray-800 mb-4">👤 Tus datos</h4>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-fixed-base font-semibold text-gray-700 mb-2">Nombre completo *</label>
+                        <input type="text" id="customerName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C5530] focus:border-transparent" required>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-fixed-base font-semibold text-gray-700 mb-2">Teléfono *</label>
+                            <input type="tel" id="customerPhone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C5530] focus:border-transparent" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-fixed-base font-semibold text-gray-700 mb-2">Correo electrónico</label>
+                            <input type="email" id="customerEmail" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C5530] focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-fixed-base font-semibold text-gray-700 mb-2">Dirección completa *</label>
+                        <input type="text" id="customerAddress" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C5530] focus:border-transparent" required placeholder="Calle, número, colonia, CP">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-fixed-base font-semibold text-gray-700 mb-2">Referencias</label>
+                        <input type="text" id="customerReferences" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C5530] focus:border-transparent" placeholder="Entre calles, edificio, color, etc.">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-fixed-base font-semibold text-gray-700 mb-2">Zona de entrega *</label>
+                        <select id="deliveryLocation" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C5530] focus:border-transparent" required>
+                            <option value="">Selecciona tu zona...</option>
+                            <option value="spgg">San Pedro Garza García - $49 (60-90 min)</option>
+                            <option value="valle">Valle Oriente - $49 (60-90 min)</option>
+                            <option value="centro">Centro Monterrey - $59 (90-120 min)</option>
+                            <option value="cumbres">Cumbres - $69 (90-120 min)</option>
+                            <option value="apodaca">Apodaca - $89 (120-150 min)</option>
+                            <option value="otros">Otras zonas - Cotizar</option>
+                        </select>
+                        <p class="text-xs text-gray-500 mt-1">*Tiempo estimado desde confirmación</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Método de pago -->
+            <div class="p-6">
+                <h4 class="text-fixed-lg font-bold text-gray-800 mb-4">💳 Método de pago</h4>
+                <div class="space-y-4">
+                    <div class="space-y-3">
+                        <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:border-[#2C5530] cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="efectivo" class="mr-3 text-[#2C5530]">
+                            <div>
+                                <span class="font-semibold">Efectivo</span>
+                                <p class="text-sm text-gray-600">Paga al recibir tu pedido</p>
+                            </div>
+                        </label>
+                        
+                        <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:border-[#2C5530] cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="transferencia" class="mr-3 text-[#2C5530]">
+                            <div>
+                                <span class="font-semibold">Transferencia bancaria</span>
+                                <p class="text-sm text-gray-600">Te enviaremos los datos por WhatsApp</p>
+                            </div>
+                        </label>
+                        
+                        <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:border-[#2C5530] cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="tarjeta" class="mr-3 text-[#2C5530]">
+                            <div>
+                                <span class="font-semibold">Tarjeta de crédito/débito</span>
+                                <p class="text-sm text-gray-600">Pago seguro en línea</p>
+                            </div>
+                        </label>
+                        
+                        <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:border-[#2C5530] cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="mercado-pago" class="mr-3 text-[#2C5530]">
+                            <div>
+                                <span class="font-semibold">Mercado Pago</span>
+                                <p class="text-sm text-gray-600">Pago con QR o enlace</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <!-- Campo para efectivo -->
+                    <div id="cashPaymentField" class="hidden mt-4">
+                        <label class="block text-fixed-base font-semibold text-gray-700 mb-2">¿Con cuánto pagarás?</label>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="cash-btn" data-amount="50">$50</button>
+                            <button type="button" class="cash-btn" data-amount="100">$100</button>
+                            <button type="button" class="cash-btn" data-amount="200">$200</button>
+                            <button type="button" class="cash-btn" data-amount="500">$500</button>
+                            <button type="button" class="cash-btn" data-amount="1000">$1000</button>
+                            <button type="button" class="cash-btn" data-amount="otro">Otro monto</button>
+                        </div>
+                        <input type="text" id="otherCashAmount" placeholder="Especifica el monto" class="hidden w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="p-6 border-t border-gray-200 bg-gray-50">
+            <button id="confirmOrderBtn" 
+                    class="w-full bg-[#2C5530] text-white font-bold py-4 px-4 rounded-lg shadow-lg hover:bg-[#1e3a28] transform hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Confirmar Pedido
+            </button>
+            <p class="text-xs text-center text-gray-500 mt-2">
+                Al confirmar, serás redirigido a WhatsApp para finalizar tu pedido
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Confirmación -->
+<div id="confirmationModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4">
+    <div class="modal-content bg-white rounded-xl shadow-2xl w-11/12 max-w-md p-8 text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+        
+        <h3 class="text-fixed-2xl font-bold text-gray-800 mb-3">¡Pedido Confirmado!</h3>
+        <p class="text-fixed-base text-gray-600 mb-6">
+            Tu pedido ha sido enviado correctamente. En breve nos comunicaremos contigo por WhatsApp para confirmar los detalles y hora de entrega.
+        </p>
+        
+        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+            <p class="text-sm text-gray-600">
+                <span class="font-bold text-[#2C5530]">Tiempo estimado de entrega:</span><br>
+                <span id="estimatedDeliveryTime" class="font-semibold">60-90 minutos</span>
+            </p>
+        </div>
+        
+        <button id="closeConfirmationModal" 
+                class="w-full bg-[#2C5530] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#1e3a28] transition-colors">
+            Cerrar
+        </button>
+    </div>
+</div>
+
+<!-- ==================== ELEMENTOS FLOTANTES ==================== -->
+
+<!-- Botón flotante del carrito -->
+<button id="floatingCartBtn" 
+        class="fixed bottom-6 right-6 bg-[#2C5530] text-white px-5 py-3 rounded-full shadow-lg hover:bg-[#1e3a28] transition-all duration-300 transform hover:scale-105 z-40 flex items-center gap-3 group">
+    <div class="relative">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.402H3.62a.5.5 0 0 1-.49-.598l-1-5A.5.5 0 0 1 2 1H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2.5h7.45l.5-2.5H3.14zM5 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+        </svg>
+        <span id="cartCount" class="absolute -top-1 -right-1 bg-[#F9A826] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
+    </div>
+    <div class="text-left hidden sm:block">
+        <div class="text-xs text-gray-300">Total</div>
+        <span id="floatingCartTotal" class="text-fixed-lg font-bold">$0</span>
+    </div>
+</button>
+
+<!-- Toast de notificación -->
+<div id="cartToast" class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none z-[9999] flex items-center gap-3">
+    <div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+    </div>
+    <p id="cartToastMessage" class="text-fixed-sm"></p>
+</div>
+
+<!-- Banner flotante promocional -->
+<div id="floatingCallout" class="fixed bottom-32 right-6 bg-gradient-to-r from-[#2C5530] to-[#1e3a28] text-white p-5 rounded-xl shadow-2xl text-fixed-base z-[9990] opacity-0 translate-x-full transition-all duration-500 ease-out max-w-xs">
+    <button class="close-btn absolute top-2 right-3 text-white/70 hover:text-white text-xl" id="closeFloatingCallout">&times;</button>
+    
+    <div class="flex items-start gap-3 mb-3">
+        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+            <span class="text-xl">🚀</span>
+        </div>
+        <div>
+            <p class="font-bold mb-1">¡Primera compra!</p>
+            <p class="text-sm opacity-90">Usa código <strong class="text-[#F9A826]">KIKIN10</strong> para 10% de descuento</p>
+        </div>
+    </div>
+    
+    <a href="#mercado" class="mt-3 inline-block w-full bg-[#F9A826] text-white text-sm font-semibold py-2 px-4 rounded-lg text-center hover:bg-orange-600 transition-colors">
+        Aplicar Descuento
+    </a>
+</div>
+
+<!-- ==================== SCRIPTS ==================== -->
+
+<!-- Catálogo dinámico para México -->
+<script src="catalogo-dinamico.js"></script>
+
+<!-- Script principal adaptado para México -->
+<script>
+    // ==================== CONFIGURACIÓN PARA MÉXICO ====================
+    const BUSINESS_CONFIG = {
+        country: 'MX',
+        currency: 'MXN',
+        currencySymbol: '$',
+        taxRate: 0.16, // IVA 16%
+        minOrderAmount: 299,
+        deliveryBaseFee: 49,
+        freeDeliveryThreshold: 599,
+        serviceFee: 0, // Sin cargo por servicio
+        deliveryZones: {
+            'spgg': { name: 'San Pedro Garza García', fee: 49, minTime: 60, maxTime: 90 },
+            'valle': { name: 'Valle Oriente', fee: 49, minTime: 60, maxTime: 90 },
+            'centro': { name: 'Centro Monterrey', fee: 59, minTime: 90, maxTime: 120 },
+            'cumbres': { name: 'Cumbres', fee: 69, minTime: 90, maxTime: 120 },
+            'apodaca': { name: 'Apodaca', fee: 89, minTime: 120, maxTime: 150 },
+            'otros': { name: 'Otras zonas', fee: 0, minTime: 0, maxTime: 0, note: 'A convenir' }
+        },
+        paymentMethods: [
+            { id: 'efectivo', name: 'Efectivo', icon: '💰' },
+            { id: 'transferencia', name: 'Transferencia', icon: '🏦' },
+            { id: 'tarjeta', name: 'Tarjeta', icon: '💳' },
+            { id: 'mercado-pago', name: 'Mercado Pago', icon: '📱' }
+        ],
+        businessHours: {
+            weekdays: '9:00 - 21:00',
+            weekends: '9:00 - 21:00'
+        },
+        whatsappNumber: '5218112345678',
+        whatsappGroupLink: 'https://chat.whatsapp.com/examplelink'
+    };
+
+    // ==================== VARIABLES GLOBALES ====================
+    let products = [];
+    let cart = JSON.parse(localStorage.getItem('cart_kikin')) || [];
+    let currentProductForModal = null;
+    let currentUnitType = 'individual';
+    let selectedCashAmount = '';
+    let toastTimeout;
+    let currentDepartment = 'mercado';
+    let currentSearchTerm = '';
+
+    // ==================== REFERENCIAS DOM ====================
+    const cartModal = document.getElementById('cartModal');
+    const productDetailsModal = document.getElementById('productDetailsModal');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const confirmationModal = document.getElementById('confirmationModal');
+    const floatingCartBtn = document.getElementById('floatingCartBtn');
+    const closeCartModalBtn = document.getElementById('closeCartModal');
+    const closeProductDetailsModalBtn = document.getElementById('closeProductDetailsModalBtn');
+    const closeCheckoutModalBtn = document.getElementById('closeCheckoutModal');
+    const closeConfirmationModalBtn = document.getElementById('closeConfirmationModal');
+    const floatingCallout = document.getElementById('floatingCallout');
+    const closeFloatingCalloutBtn = document.getElementById('closeFloatingCallout');
+
+    // ==================== FUNCIONES DE UTILIDAD ====================
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('es-MX', {
+            style: 'currency',
+            currency: 'MXN',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }).format(amount);
+    }
+
+    function calculateIVA(subtotal) {
+        return subtotal * BUSINESS_CONFIG.taxRate;
+    }
+
+    function calculateTotal(subtotal, deliveryFee = 0) {
+        const iva = calculateIVA(subtotal);
+        return subtotal + iva + deliveryFee;
+    }
+
+    function removeAccents(str) {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    }
+
+    // ==================== INICIALIZACIÓN ====================
+    document.addEventListener('DOMContentLoaded', function() {
+        // Configurar productos desde catálogo dinámico o estático
+        if (window.CatalogoDinamico && CatalogoDinamico.cargado) {
+            products = CatalogoDinamico.obtenerTodos();
+        } else if (window.catalogo && catalogo.productos) {
+            products = catalogo.productos;
+        }
+        
+        if (products.length > 0) {
+            // Ordenar por categoría y nombre
+            products.sort((a, b) => {
+                if (a.category < b.category) return -1;
+                if (a.category > b.category) return 1;
+                if (a.name < b.name) return -1;
+                if (a.name > b.name) return 1;
+                return 0;
+            });
+        }
+        
+        setupStoreSection('mercado', products);
+        updateCartUI();
+        setupGeneralEventListeners();
+        setupScrollAnimations();
+        setupScrollHeader();
+        showFloatingCalloutAfterDelay();
+        
+        // Escuchar eventos del catálogo dinámico
+        if (window.CatalogoDinamico) {
+            window.addEventListener('catalogoCargado', function(e) {
+                products = e.detail.productos;
+                setupStoreSection('mercado', products);
+            });
+            
+            window.addEventListener('catalogoActualizado', function(e) {
+                products = e.detail.productos;
+                setupStoreSection('mercado', products);
+                showCartToast('✅ Catálogo actualizado');
+            });
+        }
+    });
+
+    // ==================== GESTIÓN DE DEPARTAMENTOS ====================
+    function switchDepartment(dept) {
+        currentDepartment = dept;
+        
+        // Actualizar botones activos
+        document.querySelectorAll('.department-tab').forEach(btn => {
+            btn.classList.remove('bg-[#2C5530]', 'text-white');
+            btn.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+        });
+        
+        const activeBtn = document.getElementById('tab-' + dept);
+        if (activeBtn) {
+            activeBtn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+            activeBtn.classList.add('bg-[#2C5530]', 'text-white');
+        }
+        
+        // Actualizar título
+        const titles = {
+            'mercado': 'Todo el Catálogo',
+            'gourmet': 'Productos Gourmet',
+            'organico': 'Productos Orgánicos',
+            'internacional': 'Productos Internacionales'
+        };
+        
+        const titleElement = document.getElementById('sectionTitle');
+        if (titleElement && titles[dept]) {
+            titleElement.textContent = titles[dept];
+        }
+        
+        // Filtrar productos según departamento
+        let filteredProducts = products;
+        if (dept === 'gourmet') {
+            filteredProducts = products.filter(p => 
+                ['Cafés Especiales', 'Chocolates Premium', 'Vinos y Espumosos', 'Quesos Internacionales', 'Aceites y Vinagres'].includes(p.category)
+            );
+        } else if (dept === 'organico') {
+            filteredProducts = products.filter(p => 
+                p.category.includes('Orgánic') || 
+                p.description.toLowerCase().includes('orgánico') ||
+                (p.specificDetails && p.specificDetails.toLowerCase().includes('orgánico'))
+            );
+        } else if (dept === 'internacional') {
+            filteredProducts = products.filter(p => 
+                p.origin && p.origin !== 'México' && p.origin !== 'Mexico'
+            );
+        }
+        
+        setupStoreSection('mercado', filteredProducts);
+        
+        // Scroll suave si es necesario
+        const tabsContainer = document.getElementById('tabsContainer');
+        if (tabsContainer && window.scrollY > tabsContainer.offsetTop + 100) {
+            window.scrollTo({
+                top: tabsContainer.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // ==================== CONFIGURACIÓN DE LA TIENDA ====================
+    function setupStoreSection(sectionPrefix, allProducts) {
+        const filtersId = sectionPrefix + 'CategoryFilters';
+        const searchId = 'globalSearchInput';
+        const gridId = sectionPrefix + 'ProductGrid';
+        const noResultsId = sectionPrefix + 'NoResultsMessage';
+        
+        setupCategoryFiltersAndSearch(allProducts, filtersId, searchId, gridId, noResultsId);
+    }
+
+    function setupCategoryFiltersAndSearch(allProducts, filtersId, searchId, gridId, noResultsId) {
+        const filtersContainer = document.getElementById(filtersId);
+        const searchInput = document.getElementById(searchId);
+        const productGrid = document.getElementById(gridId);
+        const noResultsMessage = document.getElementById(noResultsId);
+        
+        if (!filtersContainer || !searchInput || !productGrid || !noResultsMessage) {
+            console.error('Elementos del DOM no encontrados');
+            return;
+        }
+        
+        // Obtener categorías únicas
+        const categories = ['all', ...new Set(allProducts.map(p => p.category).filter(Boolean))];
+        
+        // Generar botones de categoría
+        filtersContainer.innerHTML = categories.map(cat => 
+            `<button class="category-btn ${cat === 'all' ? 'active' : ''}" 
+                    data-category="${cat}">
+                ${cat === 'all' ? 'Todos' : cat}
+            </button>`
+        ).join('');
+        
+        // Estado de filtros
+        let currentCategory = 'all';
+        currentSearchTerm = '';
+        
+        // Eventos de categoría
+        filtersContainer.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remover activo de todos
+                filtersContainer.querySelectorAll('.category-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Activar el clickeado
+                this.classList.add('active');
+                currentCategory = this.dataset.category;
+                filterAndRender();
+            });
+        });
+        
+        // Evento de búsqueda
+        searchInput.value = currentSearchTerm;
+        searchInput.addEventListener('input', function(e) {
+            currentSearchTerm = e.target.value;
+            filterAndRender();
+        });
+        
+        // Función de filtrado y renderizado
+        function filterAndRender() {
+            const searchNormalized = removeAccents(currentSearchTerm);
+            
+            const filtered = allProducts.filter(product => {
+                // Filtro por categoría
+                const categoryMatch = currentCategory === 'all' || product.category === currentCategory;
+                
+                // Filtro por búsqueda
+                let searchMatch = true;
+                if (searchNormalized) {
+                    searchMatch = 
+                        removeAccents(product.name).includes(searchNormalized) ||
+                        removeAccents(product.description || '').includes(searchNormalized) ||
+                        removeAccents(product.category || '').includes(searchNormalized) ||
+                        (product.brand && removeAccents(product.brand).includes(searchNormalized)) ||
+                        (product.origin && removeAccents(product.origin).includes(searchNormalized)) ||
+                        (product.specificDetails && removeAccents(product.specificDetails).includes(searchNormalized));
+                }
+                
+                return categoryMatch && searchMatch;
+            });
+            
+            renderProducts(filtered, gridId, noResultsId);
+        }
+        
+        // Renderizar inicialmente
+        filterAndRender();
+    }
+
+    function renderProducts(productsToRender, gridId, noResultsId) {
+        const productGrid = document.getElementById(gridId);
+        const noResultsMessage = document.getElementById(noResultsId);
+        
+        if (!productGrid || !noResultsMessage) return;
+        
+        if (!productsToRender || productsToRender.length === 0) {
+            productGrid.innerHTML = '';
+            noResultsMessage.classList.remove('hidden');
+            noResultsMessage.textContent = currentSearchTerm 
+                ? `No se encontraron productos para "${currentSearchTerm}"`
+                : 'No hay productos disponibles en esta categoría';
+            return;
+        }
+        
+        noResultsMessage.classList.add('hidden');
+        
+        // Agrupar por categoría
+        const groupedProducts = productsToRender.reduce((acc, product) => {
+            const category = product.category || 'General';
+            if (!acc[category]) acc[category] = [];
+            acc[category].push(product);
+            return acc;
+        }, {});
+        
+        // Ordenar categorías alfabéticamente
+        const sortedCategories = Object.keys(groupedProducts).sort();
+        
+        let html = '';
+        
+        for (const category of sortedCategories) {
+            html += `
+                <div class="fade-in-up w-full mb-12">
+                    <h3 class="text-2xl font-bold text-center text-[#2C5530] my-8 border-b-2 border-gray-200 pb-2">
+                        — ${category} —
+                    </h3>
+                </div>
+            `;
+            
+            // Productos de esta categoría
+            html += '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">';
+            
+            groupedProducts[category].forEach((product, index) => {
+                const isUnavailable = product.status === 'unavailable';
+                const onClickHandler = isUnavailable ? '' : `onclick="showProductDetailsModal(${product.id})"`;
+                const cursorStyle = isUnavailable ? 'cursor-not-allowed' : 'cursor-pointer hover:shadow-xl';
+                
+                // Determinar color de badge según origen
+                let originColor = '#F9A826'; // Default naranja
+                if (product.origin) {
+                    if (product.origin.includes('Italia')) originColor = '#008C45';
+                    else if (product.origin.includes('Francia')) originColor = '#0055A4';
+                    else if (product.origin.includes('España')) originColor = '#C60B1E';
+                    else if (product.origin.includes('Japón')) originColor = '#BC002D';
+                    else if (product.origin.includes('México')) originColor = '#006847';
+                }
+                
+                html += `
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ${cursorStyle} fade-in-up border border-gray-100"
+                         style="transition-delay: ${index * 50}ms"
+                         ${onClickHandler}>
+                        
+                        ${product.origin ? `
+                            <div class="origin-badge" style="background-color: ${originColor}">
+                                ${product.origin.length > 10 ? product.origin.substring(0, 10) + '...' : product.origin}
+                            </div>
+                        ` : ''}
+                        
+                        <div class="relative">
+                            <img src="${product.image}" 
+                                 alt="${product.name}" 
+                                 class="w-full h-48 object-cover ${isUnavailable ? 'opacity-50' : ''}">
+                            
+                            ${isUnavailable ? `
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                    <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-bold">
+                                        AGOTADO
+                                    </span>
+                                </div>
+                            ` : ''}
+                        </div>
+                        
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-fixed-lg font-bold text-gray-800 leading-tight flex-grow pr-2">
+                                    ${product.name}
+                                </h3>
+                                <div class="text-right flex-shrink-0">
+                                    <p class="text-fixed-xl font-bold text-[#2C5530] price-tag">
+                                        ${formatCurrency(product.price)}
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            ${product.brand || product.origin ? `
+                                <div class="flex items-center gap-2 mb-3">
+                                    ${product.brand ? `
+                                        <span class="text-xs font-semibold text-[#2C5530] bg-[#E8F5E8] px-2 py-1 rounded">
+                                            ${product.brand}
+                                        </span>
+                                    ` : ''}
+                                    ${product.origin ? `
+                                        <span class="text-xs text-gray-600">
+                                            • ${product.origin}
+                                        </span>
+                                    ` : ''}
+                                </div>
+                            ` : ''}
+                            
+                            <p class="text-sm text-gray-600 mb-4 line-clamp-2">
+                                ${product.description || 'Producto premium de calidad internacional.'}
+                            </p>
+                            
+                            <div class="flex justify-between items-center">
+                                ${product.specificDetails ? `
+                                    <p class="text-xs text-gray-500">
+                                        ${product.specificDetails}
+                                    </p>
+                                ` : '<div></div>'}
+                                
+                                ${isUnavailable ? 
+                                    '<span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs font-bold rounded-full">Agotado</span>' : 
+                                    '<span class="text-sm font-bold text-[#F9A826] flex items-center gap-1 cursor-pointer">Agregar <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg></span>'}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+        }
+        
+        productGrid.innerHTML = html;
+        setupScrollAnimations();
+    }
+
+    // ==================== MODAL DETALLES PRODUCTO ====================
+    function showProductDetailsModal(productId) {
+        let product;
+        
+        // Buscar en catálogo dinámico primero
+        if (window.CatalogoDinamico && CatalogoDinamico.cargado) {
+            product = CatalogoDinamico.obtenerPorId(productId);
+        }
+        
+        // Si no, buscar en catálogo estático
+        if (!product && window.catalogo) {
+            product = catalogo.obtenerPorId(productId);
+        }
+        
+        if (!product || product.status === 'unavailable') {
+            showCartToast('Producto no disponible');
+            return;
+        }
+        
+        currentProductForModal = { ...product, quantity: 1 };
+        currentUnitType = 'individual';
+        
+        // Actualizar UI del modal
+        document.getElementById('productDetailsTitle').textContent = product.name;
+        document.getElementById('productDetailsImage').src = product.image;
+        document.getElementById('productDetailsDescription').textContent = product.description || 'Producto premium de calidad internacional.';
+        document.getElementById('productQuantityDisplay').textContent = '1';
+        
+        // Información de marca y origen
+        const brandElement = document.getElementById('productBrand');
+        const originElement = document.getElementById('productOrigin');
+        const specificDetailsElement = document.getElementById('productSpecificDetails');
+        const originBadgeElement = document.getElementById('productOriginBadge');
+        
+        if (brandElement) brandElement.textContent = product.brand || 'Marca Premium';
+        if (originElement) originElement.textContent = product.origin || 'Importado';
+        if (specificDetailsElement) {
+            specificDetailsElement.textContent = product.specificDetails || 
+                (product.brand && product.origin ? `${product.brand} • ${product.origin}` : 'Producto de calidad internacional');
+        }
+        
+        if (originBadgeElement && product.origin) {
+            originBadgeElement.textContent = product.origin.length > 12 ? 
+                product.origin.substring(0, 12) + '...' : product.origin;
+            originBadgeElement.style.display = 'block';
+        } else if (originBadgeElement) {
+            originBadgeElement.style.display = 'none';
+        }
+        
+        // Precio
+        document.getElementById('productDetailsPrice').textContent = formatCurrency(product.price);
+        
+        // Actualizar precio total
+        updateModalPricing();
+        
+        // Mostrar modal
+        showModal(productDetailsModal);
+    }
+
+    function updateModalPricing() {
+        if (!currentProductForModal) return;
+        
+        const totalPrice = currentProductForModal.price * currentProductForModal.quantity;
+        document.getElementById('modalTotalPrice').textContent = formatCurrency(totalPrice);
+    }
+
+    function addToCartFromModal() {
+        if (!currentProductForModal) return;
+        
+        const cartItem = {
+            id: currentProductForModal.id,
+            name: currentProductForModal.name,
+            price: currentProductForModal.price,
+            image: currentProductForModal.image,
+            quantity: currentProductForModal.quantity,
+            brand: currentProductForModal.brand,
+            origin: currentProductForModal.origin,
+            specificDetails: currentProductForModal.specificDetails
+        };
+        
+        // Verificar si ya existe en el carrito
+        const existingItemIndex = cart.findIndex(item => item.id === cartItem.id);
+        
+        if (existingItemIndex !== -1) {
+            // Actualizar cantidad
+            cart[existingItemIndex].quantity += cartItem.quantity;
+        } else {
+            // Añadir nuevo item
+            cart.push(cartItem);
+        }
+        
+        // Actualizar UI y almacenamiento
+        updateCartUI();
+        localStorage.setItem('cart_kikin', JSON.stringify(cart));
+        
+        // Cerrar modal y mostrar feedback
+        hideModal(productDetailsModal);
+        currentProductForModal = null;
+        showCartAnimation();
+        showCartToast('✅ Producto añadido al carrito');
+    }
+
+    // ==================== GESTIÓN DEL CARRITO ====================
+    function updateCartUI() {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const iva = calculateIVA(subtotal);
+        
+        // Calcular envío (gratis si supera el threshold)
+        const deliveryZone = document.getElementById('deliveryLocation')?.value || 'spgg';
+        const zoneInfo = BUSINESS_CONFIG.deliveryZones[deliveryZone] || BUSINESS_CONFIG.deliveryZones.spgg;
+        const deliveryFee = subtotal >= BUSINESS_CONFIG.freeDeliveryThreshold ? 0 : zoneInfo.fee;
+        
+        const total = calculateTotal(subtotal, deliveryFee);
+        
+        // Actualizar contadores
+        document.getElementById('cartCount').textContent = totalItems;
+        document.getElementById('cartTotal').textContent = formatCurrency(total);
+        document.getElementById('cartSubtotal').textContent = formatCurrency(subtotal);
+        document.getElementById('cartIVA').textContent = formatCurrency(iva);
+        document.getElementById('cartShipping').textContent = formatCurrency(deliveryFee);
+        document.getElementById('floatingCartTotal').textContent = formatCurrency(total);
+        
+        // Actualizar lista de items
+        const cartItems = document.getElementById('cartItems');
+        const sendWhatsAppOrder = document.getElementById('sendWhatsAppOrder');
+        
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<p class="text-center text-gray-500 text-fixed-base py-8">Tu carrito está vacío</p>';
+            sendWhatsAppOrder.disabled = true;
+        } else {
+            cartItems.innerHTML = cart.map((item, index) => `
+                <div class="flex items-center justify-between py-4 border-b border-gray-100 last:border-b-0">
+                    <div class="flex items-center gap-3 flex-grow">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg">
+                        <div class="flex-grow">
+                            <h5 class="text-fixed-base font-semibold text-gray-800">${item.name}</h5>
+                            ${item.brand ? `<p class="text-xs text-gray-500">${item.brand}</p>` : ''}
+                            <p class="text-fixed-sm text-gray-600">${formatCurrency(item.price)} c/u × ${item.quantity}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-2">
+                        <button onclick="updateCartQuantity(${index}, ${item.quantity - 1})" 
+                                class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-fixed-sm font-bold hover:bg-gray-300 transition-colors">
+                            -
+                        </button>
+                        <span class="text-fixed-base font-semibold w-8 text-center">${item.quantity}</span>
+                        <button onclick="updateCartQuantity(${index}, ${item.quantity + 1})" 
+                                class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-fixed-sm font-bold hover:bg-gray-300 transition-colors">
+                            +
+                        </button>
+                        <button onclick="removeFromCart(${index})" 
+                                class="ml-2 text-red-500 hover:text-red-700 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            sendWhatsAppOrder.disabled = false;
+        }
+    }
+
+    function updateCartQuantity(index, newQuantity) {
+        if (newQuantity <= 0) {
+            removeFromCart(index);
+            showCartToast('Producto eliminado del carrito');
+            return;
+        }
+        
+        cart[index].quantity = newQuantity;
+        updateCartUI();
+        localStorage.setItem('cart_kikin', JSON.stringify(cart));
+        showCartToast('Carrito actualizado');
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartUI();
+        localStorage.setItem('cart_kikin', JSON.stringify(cart));
+        showCartToast('Producto eliminado del carrito');
+    }
+
+    // ==================== CHECKOUT ====================
+    function showCheckoutModal() {
+        if (cart.length === 0) {
+            showCartToast('Tu carrito está vacío');
+            return;
+        }
+        
+        // Cargar datos guardados si existen
+        const savedData = JSON.parse(localStorage.getItem('customerData_kikin')) || {};
+        
+        document.getElementById('customerName').value = savedData.name || '';
+        document.getElementById('customerPhone').value = savedData.phone || '';
+        document.getElementById('customerEmail').value = savedData.email || '';
+        document.getElementById('customerAddress').value = savedData.address || '';
+        document.getElementById('customerReferences').value = savedData.references || '';
+        document.getElementById('deliveryLocation').value = savedData.location || '';
+        
+        // Actualizar resumen
+        updateCheckoutSummary();
+        
+        // Mostrar modal
+        showModal(checkoutModal);
+    }
+
+    function updateCheckoutSummary() {
+        const checkoutOrderSummary = document.getElementById('checkoutOrderSummary');
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const iva = calculateIVA(subtotal);
+        
+        // Calcular envío basado en zona seleccionada
+        const deliveryLocation = document.getElementById('deliveryLocation').value;
+        const zoneInfo = BUSINESS_CONFIG.deliveryZones[deliveryLocation] || BUSINESS_CONFIG.deliveryZones.spgg;
+        const deliveryFee = subtotal >= BUSINESS_CONFIG.freeDeliveryThreshold ? 0 : zoneInfo.fee;
+        
+        const total = calculateTotal(subtotal, deliveryFee);
+        
+        // Actualizar lista de productos
+        checkoutOrderSummary.innerHTML = cart.map(item => `
+            <div class="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
+                <div class="flex-1">
+                    <h5 class="text-fixed-base font-semibold text-gray-800">${item.name}</h5>
+                    ${item.brand ? `<p class="text-xs text-gray-500">${item.brand}</p>` : ''}
+                    <p class="text-fixed-sm text-gray-600">${formatCurrency(item.price)} c/u × ${item.quantity}</p>
+                </div>
+                <div class="text-fixed-base font-semibold">
+                    ${formatCurrency(item.price * item.quantity)}
+                </div>
+            </div>
+        `).join('');
+        
+        // Actualizar totales
+        document.getElementById('checkoutSubtotal').textContent = formatCurrency(subtotal);
+        document.getElementById('checkoutIVA').textContent = formatCurrency(iva);
+        document.getElementById('checkoutShipping').textContent = formatCurrency(deliveryFee);
+        document.getElementById('checkoutTotal').textContent = formatCurrency(total);
+        
+        // Si el envío es gratis, mostrar badge
+        if (subtotal >= BUSINESS_CONFIG.freeDeliveryThreshold) {
+            document.getElementById('checkoutShipping').innerHTML = `
+                <span class="text-green-600 font-bold">¡GRATIS!</span>
+                <span class="text-xs text-gray-500 ml-1">(Compra > ${formatCurrency(BUSINESS_CONFIG.freeDeliveryThreshold)})</span>
+            `;
+        }
+    }
+
+    function validateCheckoutForm() {
+        // Validar datos obligatorios
+        const requiredFields = [
+            { id: 'customerName', name: 'Nombre' },
+            { id: 'customerPhone', name: 'Teléfono' },
+            { id: 'customerAddress', name: 'Dirección' },
+            { id: 'deliveryLocation', name: 'Zona de entrega' }
+        ];
+        
+        let errors = [];
+        
+        requiredFields.forEach(field => {
+            const element = document.getElementById(field.id);
+            if (!element.value.trim()) {
+                element.classList.add('border-red-500');
+                errors.push(field.name);
+            } else {
+                element.classList.remove('border-red-500');
+            }
+        });
+        
+        // Validar mínimo de compra
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const deliveryLocation = document.getElementById('deliveryLocation').value;
+        
+        if (deliveryLocation !== 'otros' && subtotal < BUSINESS_CONFIG.minOrderAmount) {
+            alert(`Mínimo de compra: ${formatCurrency(BUSINESS_CONFIG.minOrderAmount)}`);
+            return false;
+        }
+        
+        // Validar método de pago
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+        if (!paymentMethod) {
+            alert('Por favor selecciona un método de pago');
+            return false;
+        }
+        
+        if (paymentMethod.value === 'efectivo') {
+            const otherCash = document.getElementById('otherCashAmount');
+            if (!selectedCashAmount || (selectedCashAmount === 'otro' && !otherCash.value.trim())) {
+                alert('Por favor especifica con cuánto pagarás');
+                return false;
+            }
+        }
+        
+        if (errors.length > 0) {
+            alert(`Por favor completa: ${errors.join(', ')}`);
+            return false;
+        }
+        
+        return true;
+    }
+
+    function confirmOrder() {
+        if (!validateCheckoutForm()) return;
+        
+        // Obtener datos del formulario
+        const customerName = document.getElementById('customerName').value.trim();
+        const customerPhone = document.getElementById('customerPhone').value.trim();
+        const customerEmail = document.getElementById('customerEmail').value.trim();
+        const customerAddress = document.getElementById('customerAddress').value.trim();
+        const customerReferences = document.getElementById('customerReferences').value.trim();
+        const deliveryLocation = document.getElementById('deliveryLocation').value;
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+        
+        let cashAmount = '';
+        if (paymentMethod === 'efectivo') {
+            cashAmount = selectedCashAmount === 'otro' ? 
+                document.getElementById('otherCashAmount').value.trim() : 
+                selectedCashAmount;
+        }
+        
+        // Calcular totales
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const iva = calculateIVA(subtotal);
+        
+        const zoneInfo = BUSINESS_CONFIG.deliveryZones[deliveryLocation] || BUSINESS_CONFIG.deliveryZones.spgg;
+        const deliveryFee = subtotal >= BUSINESS_CONFIG.freeDeliveryThreshold ? 0 : zoneInfo.fee;
+        const total = calculateTotal(subtotal, deliveryFee);
+        
+        // Generar mensaje para WhatsApp
+        const orderId = 'KIK' + Date.now().toString().slice(-6);
+        const locationText = zoneInfo.name;
+        const deliveryTimeText = zoneInfo.note || `${zoneInfo.minTime}-${zoneInfo.maxTime} min`;
+        
+        const orderItems = cart.map(item => 
+            `• ${item.name} ${item.brand ? `(${item.brand})` : ''} x${item.quantity} - ${formatCurrency(item.price * item.quantity)}`
+        ).join('\n');
+        
+        const paymentText = paymentMethod === 'efectivo' ? 
+            `Efectivo (pagaré con ${cashAmount ? `$${cashAmount}` : 'efectivo exacto'})` :
+            paymentMethod === 'tarjeta' ? 'Tarjeta de crédito/débito' :
+            paymentMethod === 'mercado-pago' ? 'Mercado Pago' :
+            'Transferencia bancaria';
+        
+        const message = `*🛒 PEDIDO KIKIN INNOVENTIONS - #${orderId}*\n\n` +
+                       `*👤 DATOS DEL CLIENTE:*\n` +
+                       `• Nombre: ${customerName}\n` +
+                       `• Teléfono: ${customerPhone}\n` +
+                       `${customerEmail ? `• Email: ${customerEmail}\n` : ''}` +
+                       `• Dirección: ${customerAddress}\n` +
+                       `${customerReferences ? `• Referencias: ${customerReferences}\n` : ''}` +
+                       `• Zona: ${locationText}\n\n` +
+                       `*📦 PRODUCTOS:*\n${orderItems}\n\n` +
+                       `*💰 RESUMEN DE PAGO:*\n` +
+                       `• Subtotal: ${formatCurrency(subtotal)}\n` +
+                       `• IVA (16%): ${formatCurrency(iva)}\n` +
+                       `• Envío: ${deliveryFee === 0 ? 'GRATIS' : formatCurrency(deliveryFee)}\n` +
+                       `• *TOTAL: ${formatCurrency(total)}*\n\n` +
+                       `*💳 MÉTODO DE PAGO:* ${paymentText}\n\n` +
+                       `*⏰ TIEMPO ESTIMADO:* ${deliveryTimeText}\n\n` +
+                       `_Este pedido fue generado desde la plataforma web de KIKIN Innoventions_`;
+        
+        // Guardar datos del cliente
+        const customerData = {
+            name: customerName,
+            phone: customerPhone,
+            email: customerEmail,
+            address: customerAddress,
+            references: customerReferences,
+            location: deliveryLocation,
+            timestamp: Date.now()
+        };
+        
+        localStorage.setItem('customerData_kikin', JSON.stringify(customerData));
+        
+        // Enviar a Google Sheets (opcional)
+        const googleAppsScriptUrl = 'https://script.google.com/macros/s/AKfycby9Sk3Fz2_WqRQsEXrezpwqKbpYhqW_-ialMJcYKPdvZkrBfNReWWFfQ-VnXTrkJY8W/exec';
+        const formData = new FormData();
+        const orderData = {
+            idPedido: orderId,
+            customerName,
+            customerPhone,
+            customerAddress: `${customerAddress} ${customerReferences ? `(${customerReferences})` : ''}`,
+            total,
+            paymentMethod,
+            deliveryZone: locationText,
+            orderItems: cart.map(item => `${item.name} x${item.quantity}`).join(', '),
+            cashAmount,
+            timestamp: new Date().toISOString()
+        };
+        
+        for (const key in orderData) {
+            formData.append(key, orderData[key]);
+        }
+        
+        // Enviar a Google Sheets (modo no-cors para evitar CORS)
+        fetch(googleAppsScriptUrl, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        }).catch(err => console.log('Registro en Google Sheets enviado'));
+        
+        // Abrir WhatsApp
+        const whatsappUrl = `https://wa.me/${BUSINESS_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        
+        // Limpiar carrito y mostrar confirmación
+        cart = [];
+        updateCartUI();
+        localStorage.setItem('cart_kikin', JSON.stringify(cart));
+        
+        // Actualizar tiempo estimado en modal de confirmación
+        const estimatedDeliveryElement = document.getElementById('estimatedDeliveryTime');
+        if (estimatedDeliveryElement) {
+            estimatedDeliveryElement.textContent = deliveryTimeText;
+        }
+        
+        // Cerrar checkout y mostrar confirmación
+        hideModal(checkoutModal);
+        setTimeout(() => {
+            showModal(confirmationModal);
+        }, 300);
+    }
+
+    // ==================== UI Y ANIMACIONES ====================
+    function showCartAnimation() {
+        floatingCartBtn.classList.add('shake');
+        setTimeout(() => {
+            floatingCartBtn.classList.remove('shake');
+        }, 600);
+    }
+
+    function showCartToast(message) {
+        const toast = document.getElementById('cartToast');
+        const toastMessage = document.getElementById('cartToastMessage');
+        
+        clearTimeout(toastTimeout);
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+        
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    function showModal(modalElement) {
+        if (!modalElement) return;
+        modalElement.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function hideModal(modalElement) {
+        if (!modalElement) return;
+        modalElement.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    function setupScrollAnimations() {
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                observer.observe(el);
+            });
+        } else {
+            document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                el.classList.add('is-visible');
+            });
+        }
+    }
+
+    function setupScrollHeader() {
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-lg');
+                header.style.backgroundColor = '#2C5530';
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    }
+
+    function showFloatingCallout() {
+        if (sessionStorage.getItem('floatingCalloutClosed') !== 'true') {
+            setTimeout(() => {
+                floatingCallout.classList.add('show');
+            }, 1000);
+        }
+    }
+
+    function hideFloatingCallout() {
+        floatingCallout.classList.remove('show');
+    }
+
+    function showFloatingCalloutAfterDelay() {
+        setTimeout(showFloatingCallout, 15000);
+    }
+
+    function toggleAccordion(id) {
+        const content = document.getElementById('content-' + id);
+        const icon = document.getElementById('icon-' + id);
+        
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+        } else {
+            content.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+        }
+    }
+
+    // ==================== EVENT LISTENERS ====================
+    function setupGeneralEventListeners() {
+        // Carrito flotante
+        floatingCartBtn.addEventListener('click', () => showModal(cartModal));
+        
+        // Cerrar modales
+        closeCartModalBtn.addEventListener('click', () => hideModal(cartModal));
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) hideModal(cartModal);
+        });
+        
+        closeProductDetailsModalBtn.addEventListener('click', () => {
+            hideModal(productDetailsModal);
+            currentProductForModal = null;
+        });
+        
+        productDetailsModal.addEventListener('click', (e) => {
+            if (e.target === productDetailsModal) {
+                hideModal(productDetailsModal);
+                currentProductForModal = null;
+            }
+        });
+        
+        closeCheckoutModalBtn.addEventListener('click', () => hideModal(checkoutModal));
+        checkoutModal.addEventListener('click', (e) => {
+            if (e.target === checkoutModal) hideModal(checkoutModal);
+        });
+        
+        closeConfirmationModalBtn.addEventListener('click', () => hideModal(confirmationModal));
+        confirmationModal.addEventListener('click', (e) => {
+            if (e.target === confirmationModal) hideModal(confirmationModal);
+        });
+        
+        // Controles del modal de producto
+        document.getElementById('decreaseQuantityBtn').addEventListener('click', () => {
+            if (currentProductForModal && currentProductForModal.quantity > 1) {
+                currentProductForModal.quantity--;
+                document.getElementById('productQuantityDisplay').textContent = currentProductForModal.quantity;
+                updateModalPricing();
+            }
+        });
+        
+        document.getElementById('increaseQuantityBtn').addEventListener('click', () => {
+            if (currentProductForModal) {
+                currentProductForModal.quantity++;
+                document.getElementById('productQuantityDisplay').textContent = currentProductForModal.quantity;
+                updateModalPricing();
+            }
+        });
+        
+        document.getElementById('addProductToCartModalBtn').addEventListener('click', addToCartFromModal);
+        
+        // Botón enviar pedido
+        document.getElementById('sendWhatsAppOrder').addEventListener('click', () => {
+            hideModal(cartModal);
+            setTimeout(() => showCheckoutModal(), 300);
+        });
+        
+        // Menú móvil
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.add('open');
+            document.getElementById('mobile-backdrop').classList.add('open');
+        });
+        
+        document.getElementById('close-mobile-menu').addEventListener('click', closeMobileMenu);
+        document.getElementById('mobile-backdrop').addEventListener('click', closeMobileMenu);
+        
+        // Callout flotante
+        if (closeFloatingCalloutBtn) {
+            closeFloatingCalloutBtn.addEventListener('click', () => {
+                hideFloatingCallout();
+                sessionStorage.setItem('floatingCalloutClosed', 'true');
+            });
+        }
+        
+        // Enlaces de anclaje suaves
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    if (this.classList.contains('mobile-nav-link')) {
+                        closeMobileMenu();
+                    }
+                    
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            });
+        });
+        
+        // Newsletter
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                if (email) {
+                    showCartToast('✅ ¡Te has suscrito al newsletter!');
+                    this.reset();
+                }
+            });
+        }
+        
+        // Configurar eventos del checkout
+        setupCheckoutEventListeners();
+    }
+
+    function closeMobileMenu() {
+        document.getElementById('mobile-menu').classList.remove('open');
+        document.getElementById('mobile-backdrop').classList.remove('open');
+    }
+
+    function setupCheckoutEventListeners() {
+        // Actualizar envío al cambiar zona
+        const deliveryLocationSelect = document.getElementById('deliveryLocation');
+        if (deliveryLocationSelect) {
+            deliveryLocationSelect.addEventListener('change', function() {
+                updateCheckoutSummary();
+                
+                // Actualizar campo de efectivo si es necesario
+                if (this.value === 'otros') {
+                    document.getElementById('checkoutShipping').innerHTML = `
+                        <span class="text-yellow-600 font-bold">A CONVENIR</span>
+                    `;
+                }
+            });
+        }
+        
+        // Métodos de pago
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const cashField = document.getElementById('cashPaymentField');
+                cashField.classList.toggle('hidden', this.value !== 'efectivo');
+                
+                if (this.value !== 'efectivo') {
+                    selectedCashAmount = '';
+                    document.querySelectorAll('.cash-btn').forEach(btn => btn.classList.remove('active'));
+                    document.getElementById('otherCashAmount').classList.add('hidden');
+                    document.getElementById('otherCashAmount').value = '';
+                }
+            });
+        });
+        
+        // Botones de efectivo
+        document.querySelectorAll('.cash-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.cash-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                selectedCashAmount = this.getAttribute('data-amount');
+                
+                const otherInput = document.getElementById('otherCashAmount');
+                otherInput.classList.toggle('hidden', selectedCashAmount !== 'otro');
+                
+                if (selectedCashAmount === 'otro') {
+                    otherInput.focus();
+                } else {
+                    otherInput.value = '';
+                }
+            });
+        });
+        
+        // Botón confirmar pedido
+        document.getElementById('confirmOrderBtn').addEventListener('click', confirmOrder);
+    }
+
+    // ==================== SERVICE WORKER ====================
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(reg => console.log('Service Worker registrado:', reg))
+                .catch(err => console.log('Service Worker no registrado:', err));
+        });
+    }
+
+    // ==================== FUNCIONES GLOBALES ====================
+    window.showProductDetailsModal = showProductDetailsModal;
+    window.updateCartQuantity = updateCartQuantity;
+    window.removeFromCart = removeFromCart;
+    window.toggleAccordion = toggleAccordion;
+    window.switchDepartment = switchDepartment;
+</script>
+
+</body>
+</html>
