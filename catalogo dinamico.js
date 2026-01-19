@@ -3,7 +3,7 @@
 
 const CatalogoDinamico = {
   // 🔗 URL de tu CSV en GitHub - AJUSTAR A TU REPOSITORIO
-  csvURL: 'https://raw.githubusercontent.com/kikin-innovations/mexico/main/productos.csv',
+  csvURL: 'https://github.com/jccarlos010277-cmd/KIKINinnoventions/blob/main/productos.csv',
   
   // ⚙️ Configuración PARA MÉXICO
   config: {
@@ -772,5 +772,6 @@ setTimeout(function() {
     }
   }
 }, 10000);
+
 
 console.log('✅ catalogo-dinamico-mx.js v2.0 cargado y listo para KIKIN Innoventions');
